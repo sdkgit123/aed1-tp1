@@ -1,19 +1,24 @@
 def fibonacci(tam_escada):
     cache = {}
+    it = 0
 
-    def memoize(num):
+    def memoize(num, it):
+
+        soma = 0
+        seq = 2
 
         if num in cache:
             return cache[num]
         
         elif (num <= 1):
-            resultado = 1
-            cache[num] = resultado
-            return resultado
+            it += 1
+            return 1, it
         else: 
-            resultado = memoize(num-1) + memoize(num-2)
-            cache[num] = resultado
-            return resultado
+            while seq < tam_escada:
 
-            
-    return memoize(tam_escada)
+                soma = memoize(num - 1, it) + memoize(num - 2, it)
+                cache[num] = soma
+                return soma
+    
+    resultado = memoize(tam_escada, it)
+    return resultado
