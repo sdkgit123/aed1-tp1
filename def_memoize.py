@@ -1,24 +1,29 @@
+it = 0
 def fibonacci(tam_escada):
-    cache = {}
-    it = 0
+    cache = []
 
-    def memoize(num, it):
-
-        soma = 0
+    def memoize(num):
         seq = 2
+        global it
 
         if num in cache:
             return cache[num]
         
-        elif (num <= 1):
+        elif num <= 1:
             it += 1
             return 1, it
-        else: 
+        else:
             while seq < tam_escada:
 
-                soma = memoize(num - 1, it) + memoize(num - 2, it)
-                cache[num] = soma
+                soma = memoize(num - 1) + memoize(num - 2)
+                cache.append(soma)
                 return soma
     
-    resultado = memoize(tam_escada, it)
-    return resultado
+    resultado = memoize(tam_escada)
+    return resultado[-1]
+
+quantos = int(input("Quantos degraus tem a escada? "))
+resul = fibonacci(quantos)
+print(resul)
+print(it)
+
