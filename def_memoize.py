@@ -13,7 +13,7 @@ def fibonacci(tam_escada):
             it += 1
             return 1, it
         else:
-            while seq < tam_escada:
+            while seq <= tam_escada:
 
                 soma = memoize(num - 1) + memoize(num - 2)
                 cache.append(soma)
