@@ -32,7 +32,6 @@ def tempo_exec(func, *args):
     tempo_decorrido = time.time() - inicio
     return tempo_decorrido
 
-# Implementando o pandas para imprimir os valores de tempo de execução para diferentes soluções e comparação de processamento.
 # Aqui eu já até diminui o valor da lista porque a execução já tava com 3 minutos na primeira execução ;-;
 valores = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
 resultados_com = []
@@ -54,5 +53,6 @@ dados = {'Valores': valores,
          '1° execução': primeira_exec,
          '2° execução': segunda_exec}
 
+# Implementando o pandas para imprimir os valores de tempo de execução para diferentes soluções e comparação de processamento.
 dados_tabelados = pd.DataFrame(dados)
 print(dados_tabelados)

@@ -4,6 +4,6 @@ def fib(quantos):
     else:
         return fib(quantos - 1) + fib(quantos - 2)
 
-tam = int(input("Qual número da sequência você gostaria de saber?"))
+tam = int(input("Qual número da sequência você gostaria de saber? "))
 resul = fib(tam)
 print(resul)

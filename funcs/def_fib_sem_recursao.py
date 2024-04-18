@@ -1,6 +1,6 @@
 import sys 
 
-quantos = int(input("Qual número da sequência você gostaria de saber?"))
+quantos = int(input("Qual número da sequência você gostaria de saber? "))
 
 um = 1
 dois = 1
