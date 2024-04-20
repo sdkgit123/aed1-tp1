@@ -80,7 +80,7 @@ for i in valores:
     formas = memoize(i, None)
     formas_de_subir.append(formas)
 
-    
+
 dados = {'Formas': formas_de_subir,
          'Valores': valores,
          'Execução sem memoization': resultados_sem,
@@ -90,4 +90,7 @@ dados = {'Formas': formas_de_subir,
          }
 
 dados_tabelados = pd.DataFrame(dados)
-print(dados_tabelados)
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+print(dados_tabelados.to_string(index=False))
+
